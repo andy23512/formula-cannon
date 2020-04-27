@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - '35729:35729'
+      - '4200:4200'
+    volumes:
+      - $PWD/frontend:/frontend
+      - /frontend/node_modules
+    command: yarn start
+  backend:
+    build: ./backend
+    command: ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      - $PWD/backend:/backend
+    ports:
+      - "8000:8000"
