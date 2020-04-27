@@ -14,4 +14,4 @@ class SOPType(DjangoObjectType):
 class SOPItemType(DjangoObjectType):
     class Meta:
         model = SOPItem
-        fields = ('name', 'order')
+        fields = ('id', 'name', 'order')
