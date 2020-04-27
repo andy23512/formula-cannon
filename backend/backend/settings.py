@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django',
+    'sop'
 ]
 
 MIDDLEWARE = [
@@ -128,4 +130,4 @@ CSRF_COOKIE_NAME = 'formula-cannon-csrf'
 GRAPHENE = {
     'SCHEMA': 'backend.schema.schema'
 }
-  
+
