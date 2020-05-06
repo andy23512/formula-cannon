@@ -11,10 +11,12 @@
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <ng-container *ngIf="selectedSop">
-      <mat-checkbox *ngFor="let item of selectedSop.items" color="primary">
-        {{item.name}}
-      </mat-checkbox>
+    <ng-container *ngIf="sopCheckState$ | async as sopCheckState">
+      <ng-container *ngIf="selectedSop">
+        <mat-checkbox *ngFor="let item of selectedSop.items" color="primary" [checked]="sopCheckState[selectedSop.id] && sopCheckState[selectedSop.id][item.id]" (change)="onCheckChanged($event, selectedSop, item)">
+          {{item.name}}
+        </mat-checkbox>
+      </ng-container>
     </ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

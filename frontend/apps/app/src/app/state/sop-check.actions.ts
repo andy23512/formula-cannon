@@ -1,4 +1,8 @@
-export class SopCheckAction {
-  static readonly type = '[SopCheck] Add item';
-  constructor(public payload: string) { }
+export class SetSopCheck {
+  static readonly type = '[SopCheck] Set Sop Check';
+  constructor(
+    public sopId: string,
+    public sopItemId: string,
+    public check: boolean
+  ) {}
 }

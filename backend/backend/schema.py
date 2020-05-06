@@ -6,8 +6,8 @@ class Query(sop.schema.Query, ObjectType):
     pass
 
 
-class Mutation(ObjectType):
+class Mutation(sop.schema.Mutation, ObjectType):
     pass
 
 
-schema = Schema(query=Query)
+schema = Schema(query=Query, mutation=Mutation)

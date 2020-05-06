@@ -19,6 +19,7 @@ import {
   MatListModule,
   MatCheckboxModule
 } from '@angular/material';
+import { SopCheckState } from './state/sop-check.state';
 
 export function getCsrf(http: HttpClient) {
   return () => http.get('/api/csrf').toPromise();
@@ -35,7 +36,7 @@ export function getCsrf(http: HttpClient) {
       cookieName: 'formula-cannon-csrf',
       headerName: 'X-CSRFToken'
     }),
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([SopCheckState]),
     NgxsStoragePluginModule.forRoot(),
     MatToolbarModule,
     MatIconModule,

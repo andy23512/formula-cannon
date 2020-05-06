@@ -23,3 +23,7 @@ mat-sidenav-container {
 mat-icon {
   padding-right: 14px;
 }
+
+mat-checkbox {
+  display: block;
+}

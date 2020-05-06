@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { SopType } from '@frontend/interface';
+import { SopType, SopItemType } from '@frontend/interface';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Select, Store } from '@ngxs/store';
+import { SopCheckState, SopCheckStateModel } from '../state/sop-check.state';
+import { MatCheckboxChange } from '@angular/material';
+import { SetSopCheck } from '../state/sop-check.actions';
 
 @Component({
   selector: 'frontend-main',
@@ -12,7 +16,8 @@ import { Observable } from 'rxjs';
 export class MainComponent implements OnInit {
   public sops$: Observable<SopType[]>;
   public selectedSop: SopType;
-  constructor(private dataService: DataService) {}
+  @Select(SopCheckState) public sopCheckState$: Observable<SopCheckStateModel>;
+  constructor(private dataService: DataService, private store: Store) {}
 
   public ngOnInit() {
     this.sops$ = this.dataService
@@ -22,5 +27,13 @@ export class MainComponent implements OnInit {
 
   public selectSop(sop: SopType) {
     this.selectedSop = sop;
+  }
+
+  public onCheckChanged(
+    event: MatCheckboxChange,
+    sop: SopType,
+    sopItem: SopItemType
+  ) {
+    this.store.dispatch(new SetSopCheck(sop.id, sopItem.id, event.checked));
   }
 }

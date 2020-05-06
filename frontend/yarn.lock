@@ -1683,6 +1683,13 @@
     tree-kill "1.2.2"
     webpack-sources "1.4.3"
 
+"@ngxs-labs/immer-adapter@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@ngxs-labs/immer-adapter/-/immer-adapter-3.0.5.tgz#7ae2d2f34aafc8451695f9b719602c1f07d25b66"
+  integrity sha512-GZHqPR1XPoLc/RG+Oy4+vTiZOUIGR1eTFz2BXc+jzYvBG67U64Snwsaud+hASHhEcezrPOhF34jCQihpVYfaCg==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/devtools-plugin@^3.3.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.6.2.tgz#aa0a4835f90fb905951d7712dc3ce508cbc15a2c"
@@ -5809,6 +5816,11 @@ image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
+
+immer@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-6.0.3.tgz#94d5051cd724668160a900d66d85ec02816f29bd"
+  integrity sha512-12VvNrfSrXZdm/BJgi/KDW2soq5freVSf3I1+4CLunUM8mAGx2/0Njy0xBVzi5zewQZiwM7z1/1T+8VaI7NkmQ==
 
 immutable@~3.7.6:
   version "3.7.6"
