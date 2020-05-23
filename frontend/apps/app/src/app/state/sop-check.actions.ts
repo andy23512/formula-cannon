@@ -6,3 +6,8 @@ export class SetSopCheck {
     public check: boolean
   ) {}
 }
+
+export class UncheckAll {
+  static readonly type = '[SopCheck] UncheckAll';
+  constructor(public sopId: string) {}
+}

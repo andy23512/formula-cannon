@@ -1,5 +1,5 @@
 import { State, Action, StateContext } from '@ngxs/store';
-import { SetSopCheck } from './sop-check.actions';
+import { SetSopCheck, UncheckAll } from './sop-check.actions';
 import { ImmutableContext } from '@ngxs-labs/immer-adapter';
 
 export interface SopCheckStateModel {
@@ -13,7 +13,7 @@ export interface SopCheckStateModel {
 export class SopCheckState {
   @Action(SetSopCheck)
   @ImmutableContext()
-  public add(
+  public SetSopCheck(
     { setState }: StateContext<SopCheckStateModel>,
     { sopId, sopItemId, check }: SetSopCheck
   ) {
@@ -23,6 +23,18 @@ export class SopCheckState {
       } else {
         state[sopId][sopItemId] = check;
       }
+      return state;
+    });
+  }
+
+  @Action(UncheckAll)
+  @ImmutableContext()
+  public UncheckAll(
+    { setState }: StateContext<SopCheckStateModel>,
+    { sopId }: SetSopCheck
+  ) {
+    setState((state: SopCheckStateModel) => {
+      state[sopId] = {};
       return state;
     });
   }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { SopCheckState, SopCheckStateModel } from '../state/sop-check.state';
 import { MatCheckboxChange } from '@angular/material';
-import { SetSopCheck } from '../state/sop-check.actions';
+import { SetSopCheck, UncheckAll } from '../state/sop-check.actions';
 
 @Component({
   selector: 'frontend-main',
@@ -35,5 +35,9 @@ export class MainComponent implements OnInit {
     sopItem: SopItemType
   ) {
     this.store.dispatch(new SetSopCheck(sop.id, sopItem.id, event.checked));
+  }
+
+  public uncheckAll(sop: SopType) {
+    this.store.dispatch(new UncheckAll(sop.id));
   }
 }

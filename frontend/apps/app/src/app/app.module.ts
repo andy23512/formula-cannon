@@ -17,7 +17,8 @@ import {
   MatIconModule,
   MatSidenavModule,
   MatListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatButtonModule
 } from '@angular/material';
 import { SopCheckState } from './state/sop-check.state';
 
@@ -42,7 +43,8 @@ export function getCsrf(http: HttpClient) {
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [
     {

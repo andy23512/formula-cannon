@@ -13,6 +13,9 @@
   <mat-sidenav-content>
     <ng-container *ngIf="sopCheckState$ | async as sopCheckState">
       <ng-container *ngIf="selectedSop">
+        <h3>{{selectedSop.name}}</h3>
+        <button mat-flat-button color="primary" (click)="uncheckAll(selectedSop)">Uncheck all</button>
+        <br/>
         <mat-checkbox *ngFor="let item of selectedSop.items" color="primary" [checked]="sopCheckState[selectedSop.id] && sopCheckState[selectedSop.id][item.id]" (change)="onCheckChanged($event, selectedSop, item)">
           {{item.name}}
         </mat-checkbox>
